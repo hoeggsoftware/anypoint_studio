@@ -20,6 +20,13 @@ action :create do
   end
 end
 
+action :remove do
+  directory 'C:\Program Files\AnypointStudio' do
+    recursive true
+    action :delete
+  end
+end
+
 action_class do
   include AnypointStudio::Helper
 end
