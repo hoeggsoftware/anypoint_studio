@@ -1,6 +1,10 @@
 ---
 driver:
   name: vagrant
+  provider: virtualbox
+  gui: true
+  username: vagrant
+  password: vagrant
 
 provisioner:
   name: chef_zero
@@ -13,14 +17,11 @@ verifier:
   name: inspec
 
 platforms:
-  - name: ubuntu-16.04
-  - name: centos-7.3
+  - name: windows-2012r2
+    driver:
+      box: mwrock/Windows2012R2
 
 suites:
   - name: default
     run_list:
-      - recipe[anypoint_studio::default]
-    verifier:
-      inspec_tests:
-        - test/smoke/default
-    attributes:
+      - recipe[default::default]
