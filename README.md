@@ -14,8 +14,6 @@ This cookbook provides a resource to install Anypoint Studio on a Windows box.
 
 - seven_zip
 
-# Attributes
-
 # Usage
 To use the resources provided by this cookbook, include them in a wrapper cookbook.
 
