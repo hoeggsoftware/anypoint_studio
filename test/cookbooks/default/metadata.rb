@@ -20,5 +20,3 @@ chef_version '>= 12.1' if respond_to?(:chef_version)
 # source_url 'https://github.com/<insert_org_here>/default'
 
 depends 'anypoint_studio'
-depends 'chocolatey'
-depends 'seven_zip'

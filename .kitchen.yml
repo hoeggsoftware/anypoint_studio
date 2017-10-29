@@ -5,6 +5,11 @@ driver:
   gui: true
   username: vagrant
   password: vagrant
+  network:
+    - ["forwarded_port", {guest: 3389, host: 33389, auto_correct: true, id: "rdp"}]
+  communicator: winrm
+  basic_auth_only: true
+
 
 provisioner:
   name: chef_zero
@@ -17,9 +22,9 @@ verifier:
   name: inspec
 
 platforms:
-  - name: windows-2012r2
+  - name: windows_10_pro
     driver:
-      box: mwrock/Windows2012R2
+      box: hoeggsoftware/windows_10_pro
 
 suites:
   - name: default
