@@ -1,14 +1,6 @@
 ---
 driver:
   name: vagrant
-  provider: virtualbox
-  gui: true
-  username: vagrant
-  password: vagrant
-  network:
-    - ["forwarded_port", {guest: 3389, host: 33389, auto_correct: true, id: "rdp"}]
-  communicator: winrm
-  basic_auth_only: true
 
 
 provisioner:
@@ -22,9 +14,9 @@ verifier:
   name: inspec
 
 platforms:
-  - name: windows_10_pro
+  - name: windows-2012R2
     driver:
-      box: hoeggsoftware/windows_10_pro
+      box: mwrock/Windows2012R2
 
 suites:
   - name: default
